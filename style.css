@@ -1,3 +1,74 @@
+/* ========================Reset and base styles======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+/* =========================Container========================= */
+.container {
+  max-width: 1200px;
+  margin: 10px auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================Navbar container========================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* =========================Logo styling========================= */
+.logo {
+  font-size: 32px;
+  font-weight: 400;
+  color: #222;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.logo i{
+  color: #28c66f;
+}
+
+/* =========================Underline below MediMind========================= */
+.logo .underline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: #28c66f;
+  border-radius: 2px;
+}
+
+/* =========================Navigation links========================= */
+.nav-links a {
+  text-decoration: none;
+  margin-left: 30px;
+  color: #436470;
+  font-size: 20px;
+  transition: color 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  background-color: #22b05f;
+  padding: 10px;
+  border-radius: 10px;
+}
 /* General Button Styles */
 .btn {
   display: inline-block;

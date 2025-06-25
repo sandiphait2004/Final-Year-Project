@@ -3,13 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Health Predictor AI</title>
+  <title>MediMind - Your AI-powered medical mind, diagnoses with intelligence</title>
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Remix Icon CDN -->
+  <!-- =========================Remix Icon CDN========================= -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
+  <!-- ========================Navbar======================== -->
+  <header class="navbar">
+    <div class="container">
+        <div class="logo">
+            MediMind
+            <i class="ri-first-aid-kit-line"></i>
+            <div class="underline"></div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#about">About Us</a>
+            <a href="./Login & Register/register.html">Register</a>
+        </nav>
+    </div>
+</header>
   <!-- Hero Section -->
   <header class="hero">
     <div class="hero-container">
@@ -18,7 +35,7 @@
         <p>Predict potential health risks with 95% accuracy using symptom analysis</p>
 
         <div class="hero-buttons">
-          <a href="login.html" class="btn primary">Get Started <i class="ri-arrow-right-line"></i></a>
+          <a href="./Login & Register/login.html" class="btn primary">Get Started <i class="ri-arrow-right-line"></i></a>
           <a href="#" class="btn outline">How It Works</a>
         </div>
 
@@ -39,7 +56,7 @@
   </header>
 
   <!-- Features Section -->
-  <section class="features">
+  <section id="services" class="features">
     <div class="feature">
       <img src="https://img.icons8.com/?size=100&id=gTN9eaZkKLFI&format=png&color=000000" alt="AI Icon" width="50" height="50">
       <h2>AI Diagnosis</h2>
@@ -58,7 +75,7 @@
   </section>
 
   <!-- About Section -->
-  <section class="about-section">
+  <section id="about" class="about-section">
     <h2>Healthcare Meets AI</h2>
     <p>
       Our algorithm combines 5 years of medical research with cutting-edge artificial intelligence to provide accurate health predictions. Trusted by healthcare professionals worldwide.
