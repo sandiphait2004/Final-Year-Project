@@ -62,6 +62,9 @@
 .btn.secondary:hover {
   background-color: #eafaf3;
 }
+.hero-buttons a{
+  text-decoration: none;
+}
 
 /* Hero Visual */
 .hero-visual {
