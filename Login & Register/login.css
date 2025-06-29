@@ -1,8 +1,15 @@
+/* =======================Google Font========================= */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 /* Reset and body styles */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #eaf3fe, #dceeff);
+  font-family: "Ubuntu", sans-serif, Tahoma, Geneva, Verdana, sans-serif;
+  /* background: linear-gradient(to right, #2196F3, #4CAF50); */
+  background-image: url(../Assets/LogBackground.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
