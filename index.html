@@ -1,127 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MediMind - Your AI-powered medical mind, diagnoses with intelligence</title>
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- =========================Remix Icon CDN========================= -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediMind - AI-Powered Health Guardian</title>
+    <meta name="description" content="Predict potential health risks with 95% accuracy using AI-powered symptom analysis. Your trusted AI health companion.">
+    
+    <!-- Preconnect to external domains for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <!-- ========================Navbar======================== -->
-  <header class="navbar">
-    <div class="container">
-        <div class="logo">
-            MediMind
-            <i class="ri-first-aid-kit-line"></i>
-            <div class="underline"></div>
-        </div>
+    <!-- ======================== NAVIGATION HEADER ======================== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <!-- Logo -->
+            <div class="nav__logo">
+                <i class="fas fa-brain nav__logo-icon"></i>
+                <span class="nav__logo-text">MediMind</span>
+            </div>
 
-        <nav class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#about">About Us</a>
-            <a href="./Login & Register/register.html">Register</a>
+            <!-- Navigation Menu -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="fas fa-home nav__icon"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#services" class="nav__link">
+                            <i class="fas fa-stethoscope nav__icon"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class="fas fa-info-circle nav__icon"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="fas fa-envelope nav__icon"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+            <!-- Auth Buttons -->
+            <div class="nav__auth">
+                <a href="./Login-And-SignUp/register.html" class="btn btn--primary btn--small">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Sign Up</span>
+                </a>
+            </div>
+
+            <!-- Toggle button -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
-    </div>
-</header>
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-container">
-      <div class="hero-content">
-        <h1>Your <span>AI-Powered</span> Health Guardian</h1>
-        <p>Predict potential health risks with 95% accuracy using symptom analysis</p>
+    </header>
+    <!-- ======================== MAIN CONTENT ======================== -->
+    <main class="main">
+        <!-- ======================== HERO SECTION ======================== -->
+        <section class="hero section" id="home">
+            <div class="hero__container container grid">
+                <!-- Hero Content -->
+                <div class="hero__content">
+                    <div class="hero__subtitle">
+                        <i class="fas fa-robot"></i>
+                        <span>AI-Powered Healthcare</span>
+                    </div>
+                    
+                    <h1 class="hero__title">
+                        Your <span class="hero__title-highlight">AI-Powered</span><br>
+                        Health Guardian
+                    </h1>
+                    
+                    <p class="hero__description">
+                        Predict potential health risks with <strong>95% accuracy</strong> using advanced 
+                        AI symptom analysis. Get instant medical insights and personalized health recommendations.
+                    </p>
 
-        <div class="hero-buttons">
-          <a href="./Login & Register/login.html" class="btn primary">Get Started <i class="ri-arrow-right-line"></i></a>
-          <a href="#" class="btn outline">How It Works</a>
+                    <!-- Hero Stats -->
+                    <div class="hero__stats">
+                        <div class="hero__stat">
+                            <span class="hero__stat-number">10K+</span>
+                            <span class="hero__stat-text">Cases Analyzed</span>
+                        </div>
+                        <div class="hero__stat">
+                            <span class="hero__stat-number">95%</span>
+                            <span class="hero__stat-text">Accuracy Rate</span>
+                        </div>
+                        <div class="hero__stat">
+                            <span class="hero__stat-number">24/7</span>
+                            <span class="hero__stat-text">Available</span>
+                        </div>
+                    </div>
+
+                    <!-- Hero Buttons -->
+                    <div class="hero__buttons">
+                        <a href="./Login-And-SignUp/login.html" class="btn btn--primary btn--large" id="get-started-btn">
+                            <i class="fas fa-play"></i>
+                            <span>Get Started</span>
+                        </a>
+                        <a href="#about" class="btn btn--outline btn--large">
+                            <i class="fas fa-info-circle"></i>
+                            <span>How It Works</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="hero__visual">
+                    <div class="hero__image">
+                        <div class="hero__image-bg"></div>
+                        <div class="hero__image-content">
+                            <i class="fas fa-brain hero__main-icon"></i>
+                        </div>
+                        
+                        <!-- ===Floating Elements==== -->
+                        <div class="hero__floating hero__floating--1">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="hero__floating hero__floating--2">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="hero__floating hero__floating--3">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="hero__floating hero__floating--4">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <div class="hero__scroll">
+                <a href="#services" class="hero__scroll-link">
+                    <i class="fas fa-mouse"></i>
+                    <span>Scroll Down</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ======================== SERVICES SECTION ======================== -->
+        <section class="services section" id="services">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section__header">
+                    <span class="section__subtitle">Our Services</span>
+                    <h2 class="section__title">AI-Powered Medical Solutions</h2>
+                    <p class="section__description">
+                        Experience the future of healthcare with our advanced AI diagnostic tools
+                    </p>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="services__container grid">
+                    <!-- Service 1 -->
+                    <article class="service__card">
+                        <div class="service__icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="service__title">AI Diagnosis</h3>
+                        <p class="service__description">
+                            Advanced machine learning algorithms trained on over 10,000 medical cases 
+                            for accurate symptom analysis and diagnosis prediction.
+                        </p>
+                        <div class="service__features">
+                            <span class="service__feature">
+                                <i class="fas fa-check"></i>
+                                Machine Learning
+                            </span>
+                            <span class="service__feature">
+                                <i class="fas fa-check"></i>
+                                10K+ Cases
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Service 2 -->
+                    <article class="service__card service__card--featured">
+                        <div class="service__badge">Most Popular</div>
+                        <div class="service__icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="service__title">Instant Results</h3>
+                        <p class="service__description">
+                            Get comprehensive health predictions and personalized doctor recommendations 
+                            in under 30 seconds with our lightning-fast AI engine.
+                        </p>
+                        <div class="service__features">
+                            <span class="service__feature">
+                                <i class="fas fa-check"></i>
+                                30 Second Analysis
+                            </span>
+                            <span class="service__feature">
+                                <i class="fas fa-check"></i>
+                                Doctor Matching
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Service 3 -->
+                    <article class="service__card">
+                        <div class="service__icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="service__title">Privacy First</h3>
+                        <p class="service__description">
+                            Your health data is protected with military-grade encryption and 
+                            HIPAA-compliant security measures ensuring complete privacy.
+                        </p>
+                        <div class="service__features">
+                            <span class="service__feature">
+                                <i class="fas fa-check"></i>
+                                HIPAA Compliant
+                            </span>
+                            <span class="service__feature">
+                                <i class="fas fa-check"></i>
+                                End-to-End Encryption
+                            </span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== ABOUT SECTION ======================== -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="about__container grid">
+                    <!-- About Content -->
+                    <div class="about__content">
+                        <span class="section__subtitle">About MediMind</span>
+                        <h2 class="section__title">Healthcare Meets Artificial Intelligence</h2>
+                        <p class="about__description">
+                            Our revolutionary AI algorithm combines 5 years of intensive medical research 
+                            with cutting-edge artificial intelligence to provide the most accurate health 
+                            predictions available. Trusted by healthcare professionals worldwide.
+                        </p>
+
+                        <!-- About Features -->
+                        <div class="about__features">
+                            <div class="about__feature">
+                                <i class="fas fa-microscope about__feature-icon"></i>
+                                <div class="about__feature-content">
+                                    <h4 class="about__feature-title">Advanced Research</h4>
+                                    <p class="about__feature-text">5+ years of medical research backing our AI</p>
+                                </div>
+                            </div>
+                            <div class="about__feature">
+                                <i class="fas fa-globe about__feature-icon"></i>
+                                <div class="about__feature-content">
+                                    <h4 class="about__feature-title">Global Trust</h4>
+                                    <p class="about__feature-text">Trusted by healthcare professionals worldwide</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <a href="./Login-And-SignUp/register.html" class="btn btn--primary">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Join Now</span>
+                        </a>
+                    </div>
+
+                    <!-- About Stats -->
+                    <div class="about__stats">
+                        <div class="stats__grid">
+                            <div class="stat__card">
+                                <div class="stat__icon">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                                <div class="stat__number">132+</div>
+                                <div class="stat__label">Symptoms Analyzed</div>
+                            </div>
+                            
+                            <div class="stat__card">
+                                <div class="stat__icon">
+                                    <i class="fas fa-virus"></i>
+                                </div>
+                                <div class="stat__number">50+</div>
+                                <div class="stat__label">Diseases Detected</div>
+                            </div>
+                            
+                            <div class="stat__card">
+                                <div class="stat__icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat__number">1M+</div>
+                                <div class="stat__label">Users Helped</div>
+                            </div>
+                            
+                            <div class="stat__card">
+                                <div class="stat__icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat__number">24/7</div>
+                                <div class="stat__label">Support Available</div>
+                            </div>
+                        </div>
+
+                        <!-- Certifications -->
+                        <div class="about__certifications">
+                            <h4 class="certifications__title">Certifications & Compliance</h4>
+                            <div class="certifications__badges">
+                                <div class="certification__badge">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>FDA Compliant</span>
+                                </div>
+                                <div class="certification__badge">
+                                    <i class="fas fa-user-md"></i>
+                                    <span>Doctor Approved</span>
+                                </div>
+                                <div class="certification__badge">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>HIPAA Certified</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== CTA SECTION ======================== -->
+        <section class="cta section">
+            <div class="container">
+                <div class="cta__container">
+                    <div class="cta__content">
+                        <h2 class="cta__title">Ready to Transform Your Health Journey?</h2>
+                        <p class="cta__description">
+                            Join thousands of users who trust MediMind for their health insights. 
+                            Start your AI-powered health analysis today.
+                        </p>
+                        <div class="cta__buttons">
+                            <a href="./Login-And-SignUp/register.html" class="btn btn--primary btn--large">
+                                <i class="fas fa-rocket"></i>
+                                <span>Get Started Now</span>
+                            </a>
+                            <a href="#contact" class="btn btn--outline btn--large">
+                                <i class="fas fa-phone"></i>
+                                <span>Contact Us</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cta__visual">
+                        <i class="fas fa-heartbeat cta__icon"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+     </main>
+
+     <!-- ======================== FOOTER ======================== -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer__container grid">
+                <!-- Footer Brand -->
+                <div class="footer__content">
+                    <div class="footer__logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MediMind</span>
+                    </div>
+                    <p class="footer__description">
+                        Empowering individuals with AI-driven health insights for better preventive care. 
+                        Your trusted partner in digital healthcare innovation.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="footer__social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="footer__social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="footer__social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="footer__content">
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="#home" class="footer__link">Home</a></li>
+                        <li><a href="#services" class="footer__link">Services</a></li>
+                        <li><a href="#about" class="footer__link">About Us</a></li>
+                        <li><a href="./Login-And-SignUp/login.html" class="footer__link">Sign In</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h4 class="footer__title">Support</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Help Center</a></li>
+                        <li><a href="#" class="footer__link">FAQ</a></li>
+                        <li><a href="#" class="footer__link">Contact Support</a></li>
+                        <li><a href="#" class="footer__link">Live Chat</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h4 class="footer__title">Legal</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer__link">Terms of Service</a></li>
+                        <li><a href="#" class="footer__link">Cookie Policy</a></li>
+                        <li><a href="#" class="footer__link">HIPAA Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p class="footer__copy">
+                    &copy; 2025 MediMind. All rights reserved. | 
+                    <a href="#" class="footer__copy-link">Privacy</a> | 
+                    <a href="#" class="footer__copy-link">Terms</a>
+                </p>
+            </div>
         </div>
+    </footer>
 
-      </div>
-      <div class="hero-visual">
-        <div class="circle-icon brain">
-          <img src="https://img.icons8.com/?size=100&id=gTN9eaZkKLFI&format=png&color=000000" alt="AI Icon" width="50" height="50">
-        </div>
-        <div class="circle-icon pulse">
-          <img src="https://img.icons8.com/?size=100&id=BG2KsiPQMB0y&format=png&color=000000" alt="Privacy Icon" width="50" height="50">
-        </div>
-        <div class="circle-icon shield">
-          <img src="https://img.icons8.com/?size=100&id=FbRY9JkBrjiX&format=png&color=ffffff" alt="Shield Icon" />
-        </div>
-        <div class="placeholder-box">Image</div>
-      </div>
-    </div>
-  </header>
+    <!-- ======================== SCROLL UP BUTTON ======================== -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="fas fa-angle-up scrollup__icon"></i>
+    </a>
 
-  <!-- Features Section -->
-  <section id="services" class="features">
-    <div class="feature">
-      <img src="https://img.icons8.com/?size=100&id=gTN9eaZkKLFI&format=png&color=000000" alt="AI Icon" width="50" height="50">
-      <h2>AI Diagnosis</h2>
-      <p>Machine learning trained on 10,000+ medical cases</p>
-    </div>
-    <div class="feature">
-      <img src="https://img.icons8.com/?size=100&id=BG2KsiPQMB0y&format=png&color=000000" alt="Privacy Icon" width="50" height="50">
-      <h2>Instant Results</h2>
-      <p>Get predictions and doctor recommendations in 30 seconds</p>
-    </div>
-    <div class="feature">
-      <img src="https://img.icons8.com/?size=100&id=FbRY9JkBrjiX&format=png&color=000000" alt="AI Medical Icon" width="50" height="50">
-      <h2>Privacy First</h2>
-      <p>HIPAA-compliant data encryption</p>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <h2>Healthcare Meets AI</h2>
-    <p>
-      Our algorithm combines 5 years of medical research with cutting-edge artificial intelligence to provide accurate health predictions. Trusted by healthcare professionals worldwide.
-    </p>
-
-    <div class="stats-grid">
-      <div class="stat-box">
-        <div class="stat-number blue">132+</div>
-        <div class="stat-label">Symptoms Analyzed</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number green">50+</div>
-        <div class="stat-label">Diseases Detected</div>
-      </div>
-    </div>
-
-    <div class="badges">
-      <div class="badge">
-        <span class="badge-icon">🧍‍♂️</span>
-        FDA-compliant
-      </div>
-      <div class="badge">
-        <span class="badge-icon">🧑‍⚕️</span>
-        Doctor-approved
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <p><strong>Health Predictor AI</strong><br/>Empowering individuals with AI-driven health insights for better preventive care.</p>
-
-      <div class="footer-links">
-        <ul>
-          <li><a href="#">How It Works</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Help Center</a></li>
-        </ul>
-      </div>
-      <p>© 2025 Health Predictor AI. All rights reserved.</p>
-    </div>
-  </footer>
+     <!-- ======================== JAVASCRIPT ======================== -->
+    <script src="./script.js"></script>
 </body>
 </html>
