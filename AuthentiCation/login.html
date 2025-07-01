@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - MediMind</title>
+    <meta name="description" content="Sign in to your MediMind account and access AI-powered health insights.">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./auth.css">
+</head>
+<body class="auth-body">
+    <!-- ======================== NAVIGATION ======================== -->
+    <nav class="auth-nav">
+        <div class="auth-nav__container">
+            <a href="../index.html" class="auth-nav__logo">
+                <i class="fas fa-brain"></i>
+                <span>MediMind</span>
+            </a>
+            <a href="../index.html" class="auth-nav__back">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ======================== MAIN CONTENT ======================== -->
+    <main class="auth-main">
+        <div class="auth-container">
+            <!-- Left Side - Branding -->
+            <div class="auth-brand">
+                <div class="auth-brand__content">
+                    <div class="auth-brand__icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h1 class="auth-brand__title">Welcome Back to MediMind</h1>
+                    <p class="auth-brand__description">
+                        Continue your AI-powered health journey. Sign in to access personalized 
+                        health insights and connect with healthcare professionals.
+                    </p>
+                    
+                    <!-- Features List -->
+                    <div class="auth-features">
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>AI-powered symptom analysis</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Instant health predictions</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>HIPAA-compliant security</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 health monitoring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Sign In Form -->
+            <div class="auth-form-container">
+                <div class="auth-form-wrapper">
+                    <!-- Form Header -->
+                    <div class="auth-header">
+                        <h2 class="auth-title">Sign In</h2>
+                        <p class="auth-subtitle">Enter your credentials to access your account</p>
+                    </div>
+
+                    <!-- Sign In Form -->
+                    <form class="auth-form" id="signin-form">
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <div class="form-input-wrapper">
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email"
+                                    class="form-input" 
+                                    placeholder="Enter your email address"
+                                    required
+                                    autocomplete="email"
+                                >
+                                <i class="fas fa-envelope form-icon"></i>
+                            </div>
+                            <div class="form-error" id="email-error"></div>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="form-input-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password"
+                                    class="form-input" 
+                                    placeholder="Enter your password"
+                                    required
+                                    autocomplete="current-password"
+                                >
+                                <i class="fas fa-lock form-icon"></i>
+                                <button type="button" class="form-toggle-password" id="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="form-error" id="password-error"></div>
+                        </div>
+
+                        <!-- Form Options -->
+                        <div class="form-options">
+                            <label class="form-checkbox">
+                                <input type="checkbox" id="remember-me" name="remember">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">Remember me</span>
+                            </label>
+                            <a href="forgot-password.html" class="form-link">Forgot Password?</a>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn--primary btn--full" id="signin-btn">
+                            <span class="btn-text">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Sign In
+                            </span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                Signing In...
+                            </span>
+                        </button>
+
+                        <!-- Success Message -->
+                        <div class="form-success" id="signin-success" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sign in successful! Redirecting to dashboard...</span>
+                        </div>
+                    </form>
+
+                    <!-- Divider -->
+                    <div class="auth-divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <!-- Social Login -->
+                    <div class="auth-social">
+                        <button type="button" class="btn btn--social btn--google" id="google-signin">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                        </button>
+                        <button type="button" class="btn btn--social btn--facebook" id="facebook-signin">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </button>
+                    </div>
+
+                    <!-- Sign Up Link -->
+                    <div class="auth-switch">
+                        <p>Don't have an account? <a href="./register.html" class="auth-switch-link">Create Account</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Authenticating...</p>
+        </div>
+    </div>
+
+    <!-- ======================== JAVASCRIPT ======================== -->
+    <script src="./Auth.js"></script>
+</body>
+</html>

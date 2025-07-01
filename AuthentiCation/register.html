@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - MediMind</title>
+    <meta name="description" content="Create your MediMind account and start your AI-powered health journey today.">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./auth.css">
+</head>
+<body class="auth-body">
+    <!-- ======================== NAVIGATION ======================== -->
+    <nav class="auth-nav">
+        <div class="auth-nav__container">
+            <a href="../index.html" class="auth-nav__logo">
+                <i class="fas fa-brain"></i>
+                <span>MediMind</span>
+            </a>
+            <a href="../index.html" class="auth-nav__back">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ======================== MAIN CONTENT ======================== -->
+    <main class="auth-main">
+        <div class="auth-container">
+            <!-- Left Side - Branding -->
+            <div class="auth-brand">
+                <div class="auth-brand__content">
+                    <div class="auth-brand__icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h1 class="auth-brand__title">Join MediMind Today</h1>
+                    <p class="auth-brand__description">
+                        Start your AI-powered health journey. Create your account to access 
+                        personalized health insights and connect with healthcare professionals.
+                    </p>
+                    
+                    <!-- Features List -->
+                    <div class="auth-features">
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free account setup</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Instant AI health analysis</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Secure data protection</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 support access</span>
+                        </div>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="auth-trust">
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>HIPAA Compliant</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>FDA Approved</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-users"></i>
+                            <span>1M+ Users</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Registration Form -->
+            <div class="auth-form-container">
+                <div class="auth-form-wrapper">
+                    <!-- Form Header -->
+                    <div class="auth-header">
+                        <h2 class="auth-title">Create Account</h2>
+                        <p class="auth-subtitle">Fill in your information to get started</p>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <form class="auth-form" id="register-form">
+                        <!-- Name Fields -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name" class="form-label">First Name</label>
+                                <div class="form-input-wrapper">
+                                    <input 
+                                        type="text" 
+                                        id="first-name" 
+                                        name="firstName"
+                                        class="form-input" 
+                                        placeholder="First name"
+                                        required
+                                        autocomplete="given-name"
+                                    >
+                                    <i class="fas fa-user form-icon"></i>
+                                </div>
+                                <div class="form-error" id="first-name-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="last-name" class="form-label">Last Name</label>
+                                <div class="form-input-wrapper">
+                                    <input 
+                                        type="text" 
+                                        id="last-name" 
+                                        name="lastName"
+                                        class="form-input" 
+                                        placeholder="Last name"
+                                        required
+                                        autocomplete="family-name"
+                                    >
+                                    <i class="fas fa-user form-icon"></i>
+                                </div>
+                                <div class="form-error" id="last-name-error"></div>
+                            </div>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <div class="form-input-wrapper">
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email"
+                                    class="form-input" 
+                                    placeholder="Enter your email address"
+                                    required
+                                    autocomplete="email"
+                                >
+                                <i class="fas fa-envelope form-icon"></i>
+                            </div>
+                            <div class="form-error" id="email-error"></div>
+                        </div>
+
+                        <!-- Phone Field -->
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number (Optional)</label>
+                            <div class="form-input-wrapper">
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone"
+                                    class="form-input" 
+                                    placeholder="Enter your phone number"
+                                    autocomplete="tel"
+                                >
+                                <i class="fas fa-phone form-icon"></i>
+                            </div>
+                            <div class="form-error" id="phone-error"></div>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="form-input-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password"
+                                    class="form-input" 
+                                    placeholder="Create a strong password"
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <i class="fas fa-lock form-icon"></i>
+                                <button type="button" class="form-toggle-password" id="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="form-error" id="password-error"></div>
+                            <div class="password-strength" id="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <span class="strength-text">Password strength</span>
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password Field -->
+                        <div class="form-group">
+                            <label for="confirm-password" class="form-label">Confirm Password</label>
+                            <div class="form-input-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="confirm-password" 
+                                    name="confirmPassword"
+                                    class="form-input" 
+                                    placeholder="Confirm your password"
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <i class="fas fa-lock form-icon"></i>
+                                <button type="button" class="form-toggle-password" id="toggle-confirm-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="form-error" id="confirm-password-error"></div>
+                        </div>
+
+                        <!-- Terms and Privacy -->
+                        <div class="form-group">
+                            <label class="form-checkbox">
+                                <input type="checkbox" id="agree-terms" name="agreeTerms" required>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">
+                                    I agree to the <a href="#" class="form-link">Terms of Service</a> 
+                                    and <a href="#" class="form-link">Privacy Policy</a>
+                                </span>
+                            </label>
+                            <div class="form-error" id="terms-error"></div>
+                        </div>
+
+                        <!-- Marketing Consent -->
+                        <div class="form-group">
+                            <label class="form-checkbox">
+                                <input type="checkbox" id="marketing-consent" name="marketingConsent">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">
+                                    I'd like to receive health tips and updates via email
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn--primary btn--full" id="register-btn">
+                            <span class="btn-text">
+                                <i class="fas fa-user-plus"></i>
+                                Create Account
+                            </span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                Creating Account...
+                            </span>
+                        </button>
+
+                        <!-- Success Message -->
+                        <div class="form-success" id="register-success" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Account created successfully! Please check your email to verify your account.</span>
+                        </div>
+                    </form>
+
+                    <!-- Divider -->
+                    <div class="auth-divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <!-- Social Login -->
+                    <div class="auth-social">
+                        <button type="button" class="btn btn--social btn--google" id="google-register">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                        </button>
+                        <button type="button" class="btn btn--social btn--facebook" id="facebook-register">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </button>
+                    </div>
+
+                    <!-- Sign In Link -->
+                    <div class="auth-switch">
+                        <p>Already have an account? <a href="./login.html" class="auth-switch-link">Sign In</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Creating your account...</p>
+        </div>
+    </div>
+
+    <!-- ======================== JAVASCRIPT ======================== -->
+    <script src="./auth.js"></script>
+</body>
+</html>
