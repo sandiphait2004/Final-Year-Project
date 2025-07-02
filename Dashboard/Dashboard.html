@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Responsive viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dashboard - MediMind AI Health Assistant</title>
+    <meta name="description" content="AI-powered health analysis dashboard for symptom prediction and MRI report analysis.">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./Dashboard.css">
+</head>
+<body class="dashboard-body">
+    <!-- Mobile Navigation Toggle (Visible only on mobile) -->
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Dashboard Header/Navigation -->
+    <header class="dashboard-header">
+        <nav class="dashboard-nav">
+            <div class="nav-container">
+                <!-- Logo - Always visible including on mobile -->
+                <div class="nav-logo">
+                    <i class="fas fa-brain"></i>
+                    <span>MediMind</span>
+                </div>
+
+                <!-- Navigation Links - Hidden on mobile until toggled -->
+                <div class="nav-links" id="nav-links">
+                    <a href="#dashboard" class="nav-link active" id="dashboard-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#doctors" class="nav-link" id="doctors-link">
+                        <i class="fas fa-user-md"></i>
+                        <span>Doctor Meetup</span>
+                    </a>
+                    <a href="#history" class="nav-link" id="history-link">
+                        <i class="fas fa-history"></i>
+                        <span>History</span>
+                    </a>
+                    <a href="#reports" class="nav-link" id="reports-link">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Reports</span>
+                    </a>
+                </div>
+
+                <!-- User Profile Section -->
+                <div class="nav-profile">
+                    <div class="profile-dropdown">
+                        <button class="profile-btn" id="profile-btn" aria-expanded="false" aria-controls="profile-menu">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="profile-info">
+                                <span class="profile-name" id="user-name">Sarah Johnson</span>
+                                <span class="profile-role">Patient</span>
+                            </div>
+                            <i class="fas fa-chevron-down profile-arrow"></i>
+                        </button>
+                        <!-- Profile Dropdown Menu -->
+                        <div class="profile-menu" id="profile-menu" aria-hidden="true">
+                            <a href="../Profile/profile.html" class="profile-menu-item" id="profile-link">
+                                <i class="fas fa-user-circle"></i>
+                                <span>My Profile</span>
+                            </a>
+                            <a href="#" class="profile-menu-item" id="settings-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                            <a href="#" class="profile-menu-item" id="help-link">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Help & Support</span>
+                            </a>
+                            <div class="profile-menu-divider"></div>
+                            <a href="../index.html" class="profile-menu-item logout" id="logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main">
+        <!-- DASHBOARD CONTENT -->
+        <div id="dashboard-content">
+            <!-- Welcome Section with User Stats -->
+            <div class="welcome-section">
+                <div class="welcome-content">
+                    <h1 class="welcome-title">Welcome back, <span id="welcome-name">Sarah</span>!</h1>
+                    <p class="welcome-subtitle">Your AI-powered health assistant is ready to help you analyze symptoms and medical reports.</p>
+                </div>
+                <div class="welcome-stats">
+                    <!-- Stat Cards -->
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Analyses</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Consultations</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Accuracy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Analysis Tools Section -->
+            <div class="analysis-section">
+                <div class="analysis-grid">
+                    <!-- Symptom Analysis Card -->
+                    <div class="analysis-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="card-title">
+                                <h3>AI Symptom Analysis</h3>
+                                <p>Predict diseases based on your symptoms</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <form class="symptom-form" id="symptom-form">
+                                <!-- Symptom Input Fields -->
+                                <div class="form-group">
+                                    <label for="symptoms" class="form-label">Describe your symptoms</label>
+                                    <textarea 
+                                        id="symptoms" 
+                                        name="symptoms"
+                                        class="form-textarea" 
+                                        placeholder="e.g., headache, fever, fatigue, nausea..."
+                                        rows="4"
+                                        required
+                                    ></textarea>
+                                    <div class="form-hint">
+                                        <i class="fas fa-info-circle"></i>
+                                        Be as detailed as possible for better accuracy
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="age" class="form-label">Age</label>
+                                        <input type="number" id="age" name="age" class="form-input" placeholder="25" min="1" max="120" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender" class="form-label">Gender</label>
+                                        <select id="gender" name="gender" class="form-select" required>
+                                            <option value="">Select gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn--primary btn--full" id="analyze-symptoms-btn">
+                                    <span class="btn-text">
+                                        <i class="fas fa-search"></i>
+                                        Analyze Symptoms
+                                    </span>
+                                    <span class="btn-loading">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                        Analyzing...
+                                    </span>
+                                </button>
+                            </form>
+
+                            <!-- Results Section (Initially hidden) -->
+                            <div class="analysis-results" id="symptom-results">
+                                <div class="results-header">
+                                    <h4>Analysis Results</h4>
+                                    <div class="confidence-score">
+                                        <span>Confidence: </span>
+                                        <span class="score" id="symptom-confidence">92%</span>
+                                    </div>
+                                </div>
+                                <div class="results-content" id="symptom-predictions">
+                                    <!-- Results will be populated here by JavaScript -->
+                                </div>
+                                <div class="results-actions">
+                                    <button class="btn btn--outline btn--small" id="find-doctor-btn">
+                                        <i class="fas fa-user-md"></i>
+                                        Find Specialist
+                                    </button>
+                                    <button class="btn btn--secondary btn--small" id="save-analysis-btn">
+                                        <i class="fas fa-save"></i>
+                                        Save Analysis
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MRI Analysis Card -->
+                    <div class="analysis-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-x-ray"></i>
+                            </div>
+                            <div class="card-title">
+                                <h3>MRI Report Analysis</h3>
+                                <p>AI-powered medical imaging analysis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <form class="mri-form" id="mri-form">
+                                <!-- File Upload Section -->
+                                <div class="form-group">
+                                    <label for="mri-upload" class="form-label">Upload MRI Report</label>
+                                    <div class="file-upload-area" id="file-upload-area">
+                                        <input type="file" id="mri-upload" name="mri" accept=".jpg,.jpeg,.png,.pdf,.dcm" hidden>
+                                        <div class="upload-content">
+                                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                            <p class="upload-text">Click to upload or drag and drop</p>
+                                            <p class="upload-hint">Supports: JPG, PNG, PDF, DICOM files</p>
+                                        </div>
+                                    </div>
+                                    <div class="uploaded-file" id="uploaded-file">
+                                        <div class="file-info">
+                                            <i class="fas fa-file-medical"></i>
+                                            <span class="file-name" id="file-name"></span>
+                                            <span class="file-size" id="file-size"></span>
+                                        </div>
+                                        <button type="button" class="remove-file" id="remove-file" aria-label="Remove file">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="scan-type" class="form-label">Scan Type</label>
+                                    <select id="scan-type" name="scanType" class="form-select" required>
+                                        <option value="">Select scan type</option>
+                                        <option value="brain">Brain MRI</option>
+                                        <option value="spine">Spine MRI</option>
+                                        <option value="knee">Knee MRI</option>
+                                        <option value="shoulder">Shoulder MRI</option>
+                                        <option value="abdomen">Abdominal MRI</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="additional-info" class="form-label">Additional Information (Optional)</label>
+                                    <textarea 
+                                        id="additional-info" 
+                                        name="additionalInfo"
+                                        class="form-textarea" 
+                                        placeholder="Any specific concerns or symptoms related to the scan..."
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn--primary btn--full" id="analyze-mri-btn">
+                                    <span class="btn-text">
+                                        <i class="fas fa-microscope"></i>
+                                        Analyze MRI Report
+                                    </span>
+                                    <span class="btn-loading">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                        Processing...
+                                    </span>
+                                </button>
+                            </form>
+
+                            <!-- MRI Results Section (Initially hidden) -->
+                            <div class="analysis-results" id="mri-results">
+                                <div class="results-header">
+                                    <h4>MRI Analysis Results</h4>
+                                    <div class="confidence-score">
+                                        <span>Accuracy: </span>
+                                        <span class="score" id="mri-confidence">88%</span>
+                                    </div>
+                                </div>
+                                <div class="results-content" id="mri-findings">
+                                    <!-- Results will be populated here by JavaScript -->
+                                </div>
+                                <div class="results-actions">
+                                    <button class="btn btn--outline btn--small" id="find-radiologist-btn">
+                                        <i class="fas fa-user-md"></i>
+                                        Find Radiologist
+                                    </button>
+                                    <button class="btn btn--secondary btn--small" id="save-mri-analysis-btn">
+                                        <i class="fas fa-save"></i>
+                                        Save Report
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity Section -->
+            <div class="activity-section">
+                <div class="section-header">
+                    <h3>Recent Activity</h3>
+                    <a href="#history" class="view-all-link" id="view-all-history">View All</a>
+                </div>
+                <div class="activity-list">
+                    <!-- Activity Items -->
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Symptom Analysis Completed</h4>
+                            <p>Analyzed symptoms: headache, fever, fatigue</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                        <div class="activity-status success">
+                            <i class="fas fa-check"></i>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-x-ray"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>MRI Report Analyzed</h4>
+                            <p>Brain MRI scan processed successfully</p>
+                            <span class="activity-time">1 day ago</span>
+                        </div>
+                        <div class="activity-status success">
+                            <i class="fas fa-check"></i>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Doctor Consultation</h4>
+                            <p>Consultation with Dr. Sarah Johnson</p>
+                            <span class="activity-time">3 days ago</span>
+                        </div>
+                        <div class="activity-status completed">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOCTOR MEETUP CONTENT -->
+        <div id="doctor-meetup-content" style="display: none;">
+            <div class="section-header">
+                <h3>Meet Our Doctors</h3>
+            </div>
+            <div class="doctor-grid">
+                <div class="doctor-card">
+                    <div class="doctor-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. John Smith" />
+                    </div>
+                    <div class="doctor-info">
+                        <h4 class="doctor-name">Dr. John Smith</h4>
+                        <p class="doctor-specialty">Cardiologist</p>
+                        <div class="doctor-price paid">
+                            <i class="fas fa-money-bill-wave"></i> ₹1500 / Consultation
+                        </div>
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="btn btn--outline btn--small video-call-btn">
+                            <i class="fas fa-video"></i> Video Call
+                        </button>
+                        <button class="btn btn--primary btn--small book-btn">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </button>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Priya Verma" />
+                    </div>
+                    <div class="doctor-info">
+                        <h4 class="doctor-name">Dr. Priya Verma</h4>
+                        <p class="doctor-specialty">Neurologist</p>
+                        <div class="doctor-price paid">
+                            <i class="fas fa-money-bill-wave"></i> ₹2000 / Consultation
+                        </div>
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="btn btn--outline btn--small video-call-btn">
+                            <i class="fas fa-video"></i> Video Call
+                        </button>
+                        <button class="btn btn--primary btn--small book-btn">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </button>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Dr. Arjun Patel" />
+                    </div>
+                    <div class="doctor-info">
+                        <h4 class="doctor-name">Dr. Arjun Patel</h4>
+                        <p class="doctor-specialty">Orthopedic Surgeon</p>
+                        <div class="doctor-price paid">
+                            <i class="fas fa-money-bill-wave"></i> ₹1800 / Consultation
+                        </div>
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="btn btn--outline btn--small video-call-btn">
+                            <i class="fas fa-video"></i> Video Call
+                        </button>
+                        <button class="btn btn--primary btn--small book-btn">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </button>
+                    </div>
+                </div>
+                <!-- Add more doctor cards as needed -->
+            </div>
+        </div>
+
+        <!-- HISTORY CONTENT -->
+        <div id="history-content" style="display: none;">
+            <div class="section-header">
+                <h3>History</h3>
+            </div>
+            <div class="history-grid">
+                <!-- Analysis History -->
+                <div class="history-card">
+                    <div class="history-card-header">
+                        <i class="fas fa-brain"></i>
+                        <div>
+                            <h4>Symptom Analysis</h4>
+                            <span class="history-date">28 June 2025, 10:30 AM</span>
+                        </div>
+                    </div>
+                    <div class="history-card-body">
+                        <p><strong>Symptoms:</strong> Headache, fever, fatigue</p>
+                        <p><strong>Prediction:</strong> Viral Fever (Confidence: 92%)</p>
+                        <p><strong>Notes:</strong> Recommended rest and hydration.</p>
+                    </div>
+                </div>
+                <div class="history-card">
+                    <div class="history-card-header">
+                        <i class="fas fa-x-ray"></i>
+                        <div>
+                            <h4>MRI Report Analysis</h4>
+                            <span class="history-date">25 June 2025, 2:15 PM</span>
+                        </div>
+                    </div>
+                    <div class="history-card-body">
+                        <p><strong>Scan Type:</strong> Brain MRI</p>
+                        <p><strong>Findings:</strong> No abnormalities detected.</p>
+                        <p><strong>Accuracy:</strong> 88%</p>
+                    </div>
+                </div>
+                <!-- Doctor Consultation History -->
+                <div class="history-card">
+                    <div class="history-card-header">
+                        <i class="fas fa-user-md"></i>
+                        <div>
+                            <h4>Doctor Consultation</h4>
+                            <span class="history-date">22 June 2025, 5:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="history-card-body">
+                        <p><strong>Doctor:</strong> Dr. Priya Verma (Neurologist)</p>
+                        <p><strong>Consultation Type:</strong> Video Call</p>
+                        <p><strong>Summary:</strong> Discussed migraine symptoms, prescribed medication.</p>
+                        <p><strong>Price:</strong> ₹2000</p>
+                    </div>
+                </div>
+                <div class="history-card">
+                    <div class="history-card-header">
+                        <i class="fas fa-user-md"></i>
+                        <div>
+                            <h4>Doctor Consultation</h4>
+                            <span class="history-date">15 June 2025, 11:00 AM</span>
+                        </div>
+                    </div>
+                    <div class="history-card-body">
+                        <p><strong>Doctor:</strong> Dr. John Smith (Cardiologist)</p>
+                        <p><strong>Consultation Type:</strong> In-Person</p>
+                        <p><strong>Summary:</strong> Routine check-up, all vitals normal.</p>
+                        <p><strong>Price:</strong> ₹1500</p>
+                    </div>
+                </div>
+                <!-- Add more history cards as needed -->
+            </div>
+        </div>
+
+        <!-- REPORTS CONTENT -->
+        <div id="reports-content" style="display: none;">
+            <div class="section-header">
+                <h3>Your Reports</h3>
+            </div>
+            <div class="reports-grid">
+                <div class="report-card">
+                    <div class="report-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="report-info">
+                        <h4 class="report-title">MRI Brain Report</h4>
+                        <p class="report-date">25 June 2025</p>
+                        <p class="report-type">PDF</p>
+                    </div>
+                    <a href="sample-reports/mri-brain.pdf" download class="btn btn--secondary btn--small report-download">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+                <div class="report-card">
+                    <div class="report-icon">
+                        <i class="fas fa-file-medical-alt"></i>
+                    </div>
+                    <div class="report-info">
+                        <h4 class="report-title">Blood Test Results</h4>
+                        <p class="report-date">20 June 2025</p>
+                        <p class="report-type">PDF</p>
+                    </div>
+                    <a href="sample-reports/blood-test.pdf" download class="btn btn--secondary btn--small report-download">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+                <div class="report-card">
+                    <div class="report-icon">
+                        <i class="fas fa-file-image"></i>
+                    </div>
+                    <div class="report-info">
+                        <h4 class="report-title">Spine X-Ray</h4>
+                        <p class="report-date">18 June 2025</p>
+                        <p class="report-type">JPG</p>
+                    </div>
+                    <a href="sample-reports/spine-xray.jpg" download class="btn btn--secondary btn--small report-download">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+                <!-- Add more report cards as needed -->
+            </div>
+        </div>
+
+        <!-- SETTINGS CONTENT -->
+        <div id="settings-content" style="display:none;">
+            <div class="section-header">
+                <h3>Settings</h3>
+            </div>
+            <form class="settings-form">
+                <div class="form-group">
+                    <label class="form-label" for="profile-visibility">Profile Visibility</label>
+                    <select id="profile-visibility" class="form-select">
+                        <option value="public">Public</option>
+                        <option value="private">Private</option>
+                        <option value="doctors-only">Doctors Only</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="history-toggle">History</label>
+                    <select id="history-toggle" class="form-select">
+                        <option value="on">Turned On</option>
+                        <option value="off">Turned Off</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="security-settings">Security</label>
+                    <select id="security-settings" class="form-select">
+                        <option value="standard">Standard</option>
+                        <option value="2fa">Two-Factor Authentication</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="report-issue">Report an Issue</label>
+                    <textarea id="report-issue" class="form-textarea" placeholder="Describe your issue..."></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full">
+                    <i class="fas fa-save"></i> Save Settings
+                </button>
+            </form>
+        </div>
+
+        <!-- HELP & SUPPORT CONTENT -->
+        <div id="help-content" style="display:none;">
+            <div class="section-header">
+                <h3>Help & Support</h3>
+            </div>
+            <div class="help-support-options">
+                <div class="help-card">
+                    <div class="help-card-header">
+                        <i class="fas fa-comments"></i>
+                        <span>Chat with Us</span>
+                    </div>
+                    <div class="help-chat-box" id="help-chat-box">
+                        <div class="help-chat-messages" id="help-chat-messages">
+                            <div class="chat-message support">
+                                <span>Hello! How can we assist you today?</span>
+                            </div>
+                        </div>
+                        <form id="help-chat-form" class="help-chat-form">
+                            <input type="text" id="help-chat-input" class="form-input" placeholder="Type your message..." autocomplete="off" />
+                            <button type="submit" class="btn btn--primary btn--small">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="help-card">
+                    <div class="help-card-header">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Support</span>
+                    </div>
+                    <form class="help-email-form" id="help-email-form">
+                        <input type="email" class="form-input" id="help-email" placeholder="Your email" required />
+                        <textarea class="form-textarea" id="help-email-message" placeholder="Describe your issue..." required></textarea>
+                        <button type="submit" class="btn btn--secondary btn--small">
+                            <i class="fas fa-envelope-open-text"></i> Send Email
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay (Hidden by default) -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p id="loading-text">Processing your request...</p>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="./Dashboard.js"></script>
+</body>
+</html>
