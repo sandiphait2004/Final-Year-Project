@@ -148,7 +148,7 @@ function debounce(func, wait) {
   }
 }
 
-// // Use debounced scroll functions for better performance
+// Use debounced scroll functions for better performance
 window.addEventListener(
   "scroll",
   debounce(() => {
@@ -157,3 +157,4 @@ window.addEventListener(
     scrollActive();
   }, 10),
 )
+
